@@ -28,11 +28,32 @@ const BasicPage = ({ data, pageContext }: IProps) => {
 
           switch (type) {
             case 'component01':
-              return <Component01 key={key} title={component?.title} content={component.content} />;
+              return (
+                <Component01
+                  key={key}
+                  title={component?.title}
+                  content={component.content}
+                  image={component?.image}
+                />
+              );
             case 'component02':
-              return <Component02 key={key} title={component?.title} content={component.content} />;
+              return (
+                <Component02
+                  key={key}
+                  title={component?.title}
+                  content={component.content}
+                  image={component?.image}
+                />
+              );
             case 'component03':
-              return <Component03 key={key} title={component?.title} content={component.content} />;
+              return (
+                <Component03
+                  key={key}
+                  title={component?.title}
+                  content={component.content}
+                  image={component?.image}
+                />
+              );
           }
         })}
     </Layout>
@@ -49,6 +70,7 @@ export const query = graphql`
         type
         components {
           content
+          image
           title
           type
         }
