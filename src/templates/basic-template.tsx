@@ -1,11 +1,11 @@
 import React from 'react';
+import loadable from '@loadable/component';
 import { graphql } from 'gatsby';
 
 import Layout from '../layouts/basic';
-import Component01 from '../components/Component01';
-import Component02 from '../components/Component02';
-import Component03 from '../components/Component03';
-import content from '*.svg';
+const Component01 = loadable(() => import('../components/Component01'));
+const Component02 = loadable(() => import('../components/Component02'));
+const Component03 = loadable(() => import('../components/Component03'));
 
 interface IProps {
   data: any;
