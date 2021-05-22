@@ -5,7 +5,7 @@ import Layout from '../layouts/basic';
 import Component01 from '../components/Component01';
 import Component02 from '../components/Component02';
 import Component03 from '../components/Component03';
-import content from '*.svg';
+import PinnedImageText from '../components/PinnedImageText';
 
 interface IProps {
   data: any;
@@ -54,6 +54,14 @@ const BasicPage = ({ data, pageContext }: IProps) => {
                   image={component?.image}
                 />
               );
+            case 'pinned-image-text':
+              return (
+                <PinnedImageText
+                  key={key}
+                  title={component?.title}
+                  elements={component?.elements}
+                />
+              );
           }
         })}
     </Layout>
@@ -73,6 +81,11 @@ export const query = graphql`
           image
           title
           type
+          elements {
+            content
+            image
+            title
+          }
         }
       }
     }
