@@ -2,10 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../layouts/basic';
+import Billboard from '../components/Billboard';
 import Component01 from '../components/Component01';
 import Component02 from '../components/Component02';
 import Component03 from '../components/Component03';
 import PinnedImageText from '../components/PinnedImageText';
+import HorizontalPath from '../components/HorizontalPath';
 
 interface IProps {
   data: any;
@@ -27,6 +29,10 @@ const BasicPage = ({ data, pageContext }: IProps) => {
           const key = `${type}_${i}`;
 
           switch (type) {
+            case 'billboard':
+              return (
+                <Billboard key={key} title={component?.title} subtitle={component?.subtitle} />
+              );
             case 'component01':
               return (
                 <Component01
@@ -62,6 +68,10 @@ const BasicPage = ({ data, pageContext }: IProps) => {
                   elements={component?.elements}
                 />
               );
+            case 'horizontal-path':
+              return (
+                <HorizontalPath key={key} title={component?.title} elements={component?.elements} />
+              );
           }
         })}
     </Layout>
@@ -80,11 +90,13 @@ export const query = graphql`
           content
           image
           title
+          subtitle
           type
           elements {
             content
             image
             title
+            color
           }
         }
       }

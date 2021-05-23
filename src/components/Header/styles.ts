@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { getRatio, space } from '../../ui/helpers';
+import { rems } from '../../ui/helpers';
+import { HEADER_SIZE } from '../../ui/settings';
 
 const Container = styled.header`
   align-items: center;
@@ -17,7 +18,7 @@ const Container = styled.header`
     rgba(9, 9, 121, 1) 35%,
     rgba(0, 212, 255, 1) 100%
   );
-  min-height: ${space(10)};
+  height: ${rems(HEADER_SIZE)};
 `;
 
 export { Container };
