@@ -8,6 +8,7 @@ import Component02 from '../components/Component02';
 import Component03 from '../components/Component03';
 import PinnedImageText from '../components/PinnedImageText';
 import HorizontalPath from '../components/HorizontalPath';
+import AnimatedImageText from '../components/AnimatedImageText';
 
 interface IProps {
   data: any;
@@ -72,6 +73,16 @@ const BasicPage = ({ data, pageContext }: IProps) => {
               return (
                 <HorizontalPath key={key} title={component?.title} elements={component?.elements} />
               );
+            case 'animated-image-text':
+              return (
+                <AnimatedImageText
+                  key={key}
+                  title={component?.title}
+                  content={component.content}
+                  image={component?.image}
+                  direction={component?.direction}
+                />
+              );
           }
         })}
     </Layout>
@@ -91,6 +102,7 @@ export const query = graphql`
           image
           title
           subtitle
+          direction
           type
           elements {
             content

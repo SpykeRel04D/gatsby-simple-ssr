@@ -64,16 +64,25 @@ const Card = styled.div<{ n: number }>`
 `;
 
 const Path = styled.div<{ perc: number }>`
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   bottom: ${space(4)};
   left: 5%;
   background: white;
-  height: ${space(1)};
+  height: ${space(2)};
   position: absolute;
   width: 90%;
   z-index: 5;
   clip-path: ${({ perc }) => `inset(0% ${perc}% 0% 0%)`};
+
+  & > :first-child {
+    border-radius: 10px 0 0 10px;
+  }
+
+  & > :last-child {
+    border-radius: 0 10px 10px 0;
+  }
 `;
 
 const Progress = styled.div<{ color: string; perc: number }>`

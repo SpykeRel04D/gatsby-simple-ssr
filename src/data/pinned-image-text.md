@@ -77,10 +77,22 @@ Tiramisu cupcake candy cheesecake sweet lemon drops donut icing ice cream. Jelly
         ]
     },
     {
-      content: 'Just data for component 03',
-      image: 'https://cdn.pixabay.com/photo/2021/05/07/17/40/abstract-6236747_960_720.jpg',
-      title: 'Example of Component 03',
-      type: 'component03'
-    }
+        content: 'Just data for component 03',
+        image: 'https://cdn.pixabay.com/photo/2021/05/07/17/40/abstract-6236747_960_720.jpg',
+        title: 'Example of Component 03',
+        type: 'component03'
+    },
+    {
+        direction: 'text_right',
+        content: 'Muffin pastry toffee cheesecake. Marzipan candy canes toffee dragée macaroon toffee marzipan. Muffin muffin chupa chups dragée jelly jelly. Tiramisu soufflé marzipan jelly beans pudding. Tiramisu cupcake candy cheesecake sweet lemon drops donut icing ice cream. Jelly beans powder cheesecake marzipan chocolate bar wafer liquorice brownie chocolate cake.',
+        image: 'https://cdn.pixabay.com/photo/2021/05/12/12/56/castle-6248245_960_720.jpg',
+        type: 'animated-image-text'
+    },
+    {
+        content: 'Just data for component 01',
+        image: 'https://cdn.pixabay.com/photo/2020/07/06/01/33/forest-5375005_960_720.jpg',
+        title: 'Example of Component 01',
+        type: 'component01'
+    },
 ]
 ---
