@@ -1,10 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import GlobalStyle from '../ui/Globals';
 
 import Header from '../components/Header';
 
 const Basic = props => {
-  const rendersCount = useRef(0);
   return (
     <>
       <GlobalStyle />

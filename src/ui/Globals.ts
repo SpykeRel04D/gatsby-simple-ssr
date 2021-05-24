@@ -1,5 +1,6 @@
-import { createGlobalStyle } from "styled-components"
-import { media } from "./helpers"
+import { createGlobalStyle } from 'styled-components';
+import { media, rems } from './helpers';
+import { HEADER_SIZE } from './settings';
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -62,19 +63,10 @@ const GlobalStyle = createGlobalStyle`
     top: 0px;
     width: 100%;
     z-index: 1000;
-    a{
+    height: ${rems(HEADER_SIZE)};
+    a {
         text-decoration: none;
     }
-    ${media.min("medium")`
-        &.expanded {
-            transform: translateY(0);
-            transition: 0.5s;
-        }
-        &.retrained {
-            transform: translateY(-3rem);
-            transition: 0.5s;
-        }
-    `};
   }
   @media (prefers-reduced-motion: reduce) {
     * {
@@ -84,6 +76,6 @@ const GlobalStyle = createGlobalStyle`
       scroll-behavior: auto !important;
     }
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
