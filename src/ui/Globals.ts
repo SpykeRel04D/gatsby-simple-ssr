@@ -59,7 +59,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
   }
   header {
-    position: sticky;
+    
+    position: fixed;
     top: 0px;
     width: 100%;
     z-index: 1000;

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Bb } from './styles';
 
 const Billboard = props => {
   return (
-    <Container>
+    <Bb>
       <h1 className="title">{props.title}</h1>
       <p className="subtitle">{props.subtitle}</p>
-    </Container>
+    </Bb>
   );
 };
 

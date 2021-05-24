@@ -13,14 +13,13 @@ const AnimatedImageText = props => {
     const module = moduleRef.current;
 
     gsap.fromTo(
-      module.querySelector(`#image`),
+      module.querySelector(`#image_${props.key}`),
       {
-        x: props.direction === 'text_right' ? '-100%' : '100%',
         opacity: 0
       },
       {
-        x: 0,
         opacity: 1,
+        duration: 1.5,
         ease: 'none',
         scrollTrigger: {
           trigger: module,
@@ -31,14 +30,13 @@ const AnimatedImageText = props => {
     );
 
     gsap.fromTo(
-      module.querySelector(`#text`),
+      module.querySelector(`#text_${props.key}`),
       {
-        x: props.direction === 'text_left' ? '-100%' : '100%',
         opacity: 0
       },
       {
-        x: 0,
         opacity: 1,
+        duration: 1.5,
         ease: 'none',
         scrollTrigger: {
           trigger: module,
@@ -55,11 +53,11 @@ const AnimatedImageText = props => {
         size="reader"
         as={Content}
         className={`${props.direction === 'text_right' ? 'reverse' : ''}`}>
-        <TextZone id="text">
+        <TextZone id={`text_${props.key}`}>
           {props.title && <h2 className="title">{props.title}</h2>}
           <p className="text">{props.content}</p>
         </TextZone>
-        <ImageZone id="image">
+        <ImageZone id={`image_${props.key}`}>
           <img className="image" src={props.image} />
         </ImageZone>
       </Wrapper>
