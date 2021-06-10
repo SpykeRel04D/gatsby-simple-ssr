@@ -23,8 +23,7 @@ const AnimatedImageText = props => {
         ease: 'none',
         scrollTrigger: {
           trigger: module,
-          start: 'top center',
-          end: `bottom center`
+          start: 'top center'
         }
       }
     );
@@ -40,8 +39,7 @@ const AnimatedImageText = props => {
         ease: 'none',
         scrollTrigger: {
           trigger: module,
-          start: 'top center',
-          end: `bottom center`
+          start: 'top center'
         }
       }
     );
