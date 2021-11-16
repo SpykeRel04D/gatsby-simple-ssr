@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-starter-ssr",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple starter gatsby project, prepared for easy SSR with Markdown.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "SpykeRel04D - Roger Vidal (roger.vidal.lloveras@gmail.com)",
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
     "babel-plugin-styled-components": "^1.12.0",
@@ -39,7 +39,9 @@
     "typescript": "^4.2.3"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "ssr",
+    "markdown"
   ],
   "license": "0BSD",
   "scripts": {
