@@ -5,6 +5,8 @@ import Layout from '../layouts/basic';
 import Component01 from '../components/Component01';
 import Component02 from '../components/Component02';
 import Component03 from '../components/Component03';
+import AnimatedImageText from '../components/Animated-Image-Text';
+import AnimatedBanner from '../components/AnimatedBanner';
 import content from '*.svg';
 
 interface IProps {
@@ -54,6 +56,30 @@ const BasicPage = ({ data, pageContext }: IProps) => {
                   image={component?.image}
                 />
               );
+            case 'animatedImageText':
+              return (
+                <AnimatedImageText
+                  key={key}
+                  title={component?.title}
+                  content={component.content}
+                  image={component?.image}
+                  animation={component?.animation}
+                />
+              );
+            case 'animatedBanner':
+              return (
+                <AnimatedBanner
+                  key={key}
+                  title={component?.title}
+                  content={component?.content}
+                  cta={component?.cta}
+                  link={component?.link}
+                  image={component?.image}
+                  background={component?.background}
+                  foreground={component?.foreground}
+                  observer={component?.observer}
+                />
+              );
           }
         })}
     </Layout>
@@ -70,8 +96,14 @@ export const query = graphql`
         type
         components {
           content
+          cta
+          link
           image
           title
+          animation
+          background
+          foreground
+          observer
           type
         }
       }

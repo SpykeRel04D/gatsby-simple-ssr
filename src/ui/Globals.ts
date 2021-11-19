@@ -1,12 +1,17 @@
-import { createGlobalStyle } from "styled-components"
-import { media } from "./helpers"
+import { createGlobalStyle } from 'styled-components';
+import FontFaces from './fonts/FontFaces';
+import fonts from './fonts';
+import { media } from './helpers';
 
 const GlobalStyle = createGlobalStyle`
+  ${FontFaces};
+
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
+
   body,
   h1,
   h2,
@@ -23,9 +28,7 @@ const GlobalStyle = createGlobalStyle`
   dd {
     margin: 0;
   }
-  h1,h2 {
-      margin: 16px 0;
-  }
+
   body {
     min-height: 100vh;
     scroll-behavior: smooth;
@@ -44,19 +47,39 @@ const GlobalStyle = createGlobalStyle`
       pointer-events: none;
     }
   }
+
+  h1, .title1 {
+    ${fonts.titleLG};
+  }
+
+  h2, .title2 {
+    ${fonts.titleMD};
+  }
+
+  h3, .title3 {
+    ${fonts.titleSM};
+  }
+
+  .p-big {
+    ${fonts.bodyLG};
+  }
+
   img {
     display: block;
     max-width: 100%;
   }
+
   input,
   button,
   textarea,
   select {
     font: inherit;
   }
+
   strong, b {
     font-weight: 500;
   }
+  
   header {
     position: sticky;
     top: 0px;
@@ -65,7 +88,7 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
-    ${media.min("medium")`
+    ${media.min('medium')`
         &.expanded {
             transform: translateY(0);
             transition: 0.5s;
@@ -84,6 +107,6 @@ const GlobalStyle = createGlobalStyle`
       scroll-behavior: auto !important;
     }
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

@@ -1,0 +1,112 @@
+{
+  "colors": {
+    "teens_900": {
+      "value": "#4d2900"
+    },
+    "franquicias_900": {
+      "value": "#8d8686"
+    },
+    "teens_800": {
+      "value": "#8e5411"
+    },
+    "franquicias_800": {
+      "value": "#554546"
+    },
+    "teens_500": {
+      "value": "#fade73"
+    },
+    "franquicias_500": {
+      "value": "#746163"
+    },
+    "teens_300": {
+      "value": "#ffe990"
+    },
+    "franquicias_300": {
+      "value": "#c7a3a8"
+    },
+    "teens_100": {
+      "value": "#fff5d0"
+    },
+    "franquicias_100": {
+      "value": "#f7e4e6"
+    },
+    "tweens_900": {
+      "value": "#2d3613"
+    },
+    "tweens_800": {
+      "value": "#606f36"
+    },
+    "tweens_500": {
+      "value": "#cfe8b7"
+    },
+    "tweens_300": {
+      "value": "#dff3ca"
+    },
+    "tweens_100": {
+      "value": "#f2ffe5"
+    },
+    "kids_900": {
+      "value": "#143638"
+    },
+    "kids_800": {
+      "value": "#237179"
+    },
+    "kids_500": {
+      "value": "#bcf4dd"
+    },
+    "kids_300": {
+      "value": "#d1f0e3"
+    },
+    "kids_100": {
+      "value": "#eafff6"
+    },
+    "babies_900": {
+      "value": "#610110"
+    },
+    "babies_800": {
+      "value": "#a51d32"
+    },
+    "babies_500": {
+      "value": "#ffc1c5"
+    },
+    "babies_300": {
+      "value": "#ffdade"
+    },
+    "babies_100": {
+      "value": "#fff0f3"
+    },
+    "secondary_700": {
+      "value": "#6b7b5e"
+    },
+    "secondary_500": {
+      "value": "#9eb28f"
+    },
+    "primary_600": {
+      "value": "#c10d28"
+    },
+    "primary_700": {
+      "value": "#a10018"
+    },
+    "primary_500": {
+      "value": "#de2e49"
+    },
+    "primary_400": {
+      "value": "#ff8787"
+    },
+    "neutral_900": {
+      "value": "#303030"
+    },
+    "neutral_800": {
+      "value": "#646060"
+    },
+    "neutral_300": {
+      "value": "#ececec"
+    },
+    "neutral_200": {
+      "value": "#f7f7f7"
+    },
+    "neutral_100": {
+      "value": "#fff"
+    }
+  }
+}

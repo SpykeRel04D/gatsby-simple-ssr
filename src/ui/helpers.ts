@@ -1,6 +1,6 @@
-import { css } from "styled-components"
-import styled from "styled-components"
-import { BREAKPOINTS, FONT_BASE_SIZE, SPACE } from "./settings"
+import { css } from 'styled-components';
+import styled from 'styled-components';
+import { BREAKPOINTS, FONT_BASE_SIZE, SPACE } from './settings';
 
 const getRatio = (
   originalWidth: number,
@@ -8,15 +8,15 @@ const getRatio = (
   expectedWidth: number = 0,
   expectedHeight: number = 0
 ) => {
-  let height
-  let width
+  let height;
+  let width;
 
   if (expectedWidth > 0) {
-    height = Math.ceil((expectedWidth / originalWidth) * originalHeight)
-    width = expectedWidth
+    height = Math.ceil((expectedWidth / originalWidth) * originalHeight);
+    width = expectedWidth;
   } else {
-    height = expectedHeight
-    width = Math.ceil((expectedHeight / originalHeight) * originalWidth)
+    height = expectedHeight;
+    width = Math.ceil((expectedHeight / originalHeight) * originalWidth);
   }
   return {
     height,
@@ -24,9 +24,9 @@ const getRatio = (
     styled: `
       height: ${height}px;
       width: ${width}px;
-    `,
-  }
-}
+    `
+  };
+};
 
 /**
  * Rems
@@ -35,7 +35,7 @@ const getRatio = (
  *
  * @param {integer|string} n — Number to transform
  */
-const rems = (n: any) => `${parseInt(n, 10) / FONT_BASE_SIZE}rem`
+const rems = (n: any) => `${parseInt(n, 10) / FONT_BASE_SIZE}rem`;
 
 /**
  * Space
@@ -44,66 +44,65 @@ const rems = (n: any) => `${parseInt(n, 10) / FONT_BASE_SIZE}rem`
  *
  * @param {float} n — Multiplier, can accept decimal numbers
  */
-const space = (n: number = 1) => rems(SPACE * n)
+const space = (n: number = 1) => rems(SPACE * n);
 
 const getSizeFromBreakpoint = (value: any, max: boolean = false) => {
-  let mq
+  let mq;
   if (BREAKPOINTS[value]) {
-    mq = max ? BREAKPOINTS[value] - 1 : BREAKPOINTS[value]
+    mq = max ? BREAKPOINTS[value] - 1 : BREAKPOINTS[value];
     // tslint:disable-next-line:radix
   } else if (parseInt(value)) {
-    mq = max ? value - 1 : value
+    mq = max ? value - 1 : value;
   } else {
     // tslint:disable-next-line:no-console
-    console.error(
-      `${value} is not a valid breakpoint or size specified for media.`
-    )
+    console.error(`${value} is not a valid breakpoint or size specified for media.`);
   }
-  return mq ? `${mq / FONT_BASE_SIZE}em` : 0
-}
+  return mq ? `${mq / FONT_BASE_SIZE}em` : 0;
+};
 
 const generateMedia = () => {
   const max = (breakpoint: any) => (...args: any[]) => css`
     @media (max-width: ${getSizeFromBreakpoint(breakpoint, true)}) {
       ${css.call(null, ...args)};
     }
-  `
+  `;
 
   const min = (breakpoint: any) => (...args: any[]) => css`
     @media (min-width: ${getSizeFromBreakpoint(breakpoint)}) {
       ${css.call(null, ...args)};
     }
-  `
+  `;
 
-  const between = (firstBreakpoint: any, secondBreakpoint: any) => (
-    ...args: any[]
-  ) => css`
+  const between = (firstBreakpoint: any, secondBreakpoint: any) => (...args: any[]) => css`
     @media (min-width: ${getSizeFromBreakpoint(
         firstBreakpoint
       )}) and (max-width: ${getSizeFromBreakpoint(secondBreakpoint, true)}) {
       ${css.call(null, ...args)};
     }
-  `
+  `;
 
   return {
     between,
     max,
-    min,
-  }
-}
+    min
+  };
+};
 
-const media = generateMedia()
+const media = generateMedia();
 
 const getSrcset = (data: any, selection?: string[]) => {
-  let srcset: string = ""
+  let srcset: string = '';
   for (let key in data) {
     if (selection) {
-      if (selection.includes(key))
-        srcset += `${data[key].href} ${BREAKPOINTS[key]}w, `
-    } else if (key in BREAKPOINTS)
-      srcset += `${data[key].href} ${BREAKPOINTS[key]}w, `
+      if (selection.includes(key)) srcset += `${data[key].href} ${BREAKPOINTS[key]}w, `;
+    } else if (key in BREAKPOINTS) srcset += `${data[key].href} ${BREAKPOINTS[key]}w, `;
   }
-  return srcset.slice(0, srcset.length - 2)
-}
+  return srcset.slice(0, srcset.length - 2);
+};
 
-export { getRatio, getSizeFromBreakpoint, media, rems, getSrcset, space }
+const externalLink = (url: string) => {
+  let link = /^((http|https):\/\/)/;
+  return link.test(url);
+};
+
+export { getRatio, getSizeFromBreakpoint, media, rems, getSrcset, space, externalLink };
