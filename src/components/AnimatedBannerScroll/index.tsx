@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useTransform, useMotionValue } from 'framer-motion';
 
 import { Module, Banner, AnimatedZone, ContentZone } from './styles';
@@ -16,8 +16,9 @@ const AnimatedBannerScroll = props => {
         ref.current &&
         window.innerHeight &&
         ref.current.getBoundingClientRect().top < window.innerHeight &&
-        ref.current.getBoundingClientRect().top > 0
+        ref.current.getBoundingClientRect().top > -1 * ref.current.getBoundingClientRect().height
       ) {
+        console.log('Y');
         scrollYProgress.set(ref.current.getBoundingClientRect().top / window.innerHeight);
       }
     };
@@ -29,7 +30,7 @@ const AnimatedBannerScroll = props => {
   const bgBottomPos = useTransform(scrollYProgress, [0, 0.5, 1], ['5%', '15%', '5%']);
   const bgWidth = useTransform(scrollYProgress, [0, 0.5, 1], ['75%', '70%', '75%']);
 
-  const fgTopPos = useTransform(scrollYProgress, [0, 0.5, 1], ['-15%', '-12.5%', '-15%']);
+  const fgTopPos = useTransform(scrollYProgress, [0, 0.5, 1], ['-15%', '20%', '-15%']);
   const fgHeight = useTransform(scrollYProgress, [0, 0.5, 1], ['130%', '140%', '130%']);
 
   return (
