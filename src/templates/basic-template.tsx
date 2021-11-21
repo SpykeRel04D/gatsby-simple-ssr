@@ -2,11 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../layouts/basic';
+import WhiteComponent from '../components/WhiteComponent';
 import Component01 from '../components/Component01';
 import Component02 from '../components/Component02';
 import Component03 from '../components/Component03';
 import AnimatedImageText from '../components/Animated-Image-Text';
 import AnimatedBanner from '../components/AnimatedBanner';
+import AnimatedBannerScroll from '../components/AnimatedBannerScroll';
 import content from '*.svg';
 
 interface IProps {
@@ -29,6 +31,8 @@ const BasicPage = ({ data, pageContext }: IProps) => {
           const key = `${type}_${i}`;
 
           switch (type) {
+            case 'whiteComponent':
+              return <WhiteComponent key={key} />;
             case 'component01':
               return (
                 <Component01
@@ -78,6 +82,19 @@ const BasicPage = ({ data, pageContext }: IProps) => {
                   background={component?.background}
                   foreground={component?.foreground}
                   observer={component?.observer}
+                />
+              );
+            case 'animatedBannerScroll':
+              return (
+                <AnimatedBannerScroll
+                  key={key}
+                  title={component?.title}
+                  content={component?.content}
+                  cta={component?.cta}
+                  link={component?.link}
+                  image={component?.image}
+                  background={component?.background}
+                  foreground={component?.foreground}
                 />
               );
           }

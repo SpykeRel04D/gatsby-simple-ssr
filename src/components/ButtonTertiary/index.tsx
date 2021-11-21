@@ -23,7 +23,7 @@ const ButtonTertiary = ({ label, ...props }: IProps) => {
   ) : (
     <ButtonLink tertiary={1} {...props}>
       <span>{label}</span>
-      <Arrow />
+      {/* <Arrow /> */}
     </ButtonLink>
   );
 };
